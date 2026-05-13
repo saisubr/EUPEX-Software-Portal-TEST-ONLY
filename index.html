@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/NarasimhamurthySai/Downloads/software2.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<meta name="robots" content="noindex, nofollow">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EUPEX Software</title>
+  <style>
+    :root {
+      --eupex-blue: #1670d8;
+      --eupex-blue-dark: #0f5fbd;
+      --eupex-cyan: #39b4e6;
+      --eupex-ink: #05070b;
+      --eupex-slate: #5b6b80;
+      --eupex-border: #d9e4f1;
+      --eupex-surface: #f7fbff;
+      --eupex-white: #ffffff;
+      --shadow-lg: 0 28px 60px rgba(22, 112, 216, 0.14);
+      --shadow-md: 0 16px 32px rgba(13, 36, 67, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--eupex-ink);
+      background: linear-gradient(180deg, #f9fcff 0%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .section { padding: 86px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: #eaf3fd;
+      color: var(--eupex-blue-dark);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 2.6rem;
+    }
+
+    .section-head h2 {
+      margin: 0.9rem 0 0.8rem;
+      font-size: clamp(1.6rem, 3.0vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--eupex-slate);
+      font-size: 1.06rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(22, 112, 216, 0.10);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      height: 150px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .brand-fallback {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--eupex-ink);
+    }
+
+    .brand-fallback span {
+      color: var(--eupex-blue);
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      margin-left: 0.5rem;
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      color: var(--eupex-slate);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--eupex-blue); }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .nav-cta:hover,
+    .button:hover { transform: translateY(-1px); }
+
+    .nav-cta,
+    .button-primary {
+      background: var(--eupex-blue);
+      color: white;
+      box-shadow: 0 18px 34px rgba(22, 112, 216, 0.24);
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover { background: var(--eupex-blue-dark); }
+
+    .button-secondary {
+      background: white;
+      color: var(--eupex-ink);
+      border: 1px solid var(--eupex-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 68px 0 96px;
+      background:
+        radial-gradient(circle at top left, rgba(57, 180, 230, 0.18), transparent 26%),
+        radial-gradient(circle at right center, rgba(22, 112, 216, 0.14), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f3f9ff 100%);
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.8rem;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      margin: 1rem 0 1rem;
+      font-size: clamp(1.6rem, 3.0vw, 2.6rem);
+      line-height: .95;
+      letter-spacing: -0.06em;
+      max-width: 10.5ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--eupex-slate);
+      font-size: 1.14rem;
+    }
+
+    .hero-actions,
+    .cta-row,
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-actions { margin-top: 2rem; }
+
+    .hero-meta {
+      margin-top: 1.4rem;
+      color: var(--eupex-slate);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .hero-card,
+    .feature-card,
+    .use-card,
+    .proof-card,
+    .step,
+    .stack-card,
+    .partner-strip,
+    .cta-card {
+      border-radius: var(--radius-xl);
+      background: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-card {
+      padding: 1.3rem;
+      border: 1px solid var(--eupex-border);
+    }
+
+    .hero-card-inner {
+      border-radius: 24px;
+      padding: 1.3rem;
+      background: linear-gradient(180deg, #0e1520 0%, #1a2433 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-top small { color: rgba(255,255,255,0.62); }
+
+    .status-pill {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(57, 180, 230, 0.14);
+      color: #9bddf7;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .metric-grid,
+    .feature-grid,
+    .use-grid,
+    .proof-grid,
+    .steps {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .metric-grid {
+      margin-top: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .metric {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric span {
+      display: block;
+      color: rgba(255,255,255,0.64);
+      font-size: 0.84rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .metric strong {
+      font-size: 1.8rem;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-panels {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel h3 {
+      margin: 0 0 .9rem;
+      font-size: .98rem;
+    }
+
+    .bars {
+      min-height: 180px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: .55rem;
+      align-items: end;
+    }
+
+    .bars span {
+      border-radius: 10px 10px 4px 4px;
+      background: linear-gradient(180deg, #39b4e6 0%, #1670d8 100%);
+    }
+
+    .cap-list { display: grid; gap: .75rem; }
+
+    .cap-item {
+      padding: .9rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .cap-item strong { display: block; font-size: .95rem; }
+    .cap-item span { color: rgba(255,255,255,0.62); font-size: .88rem; }
+
+    .value-strip {
+      background: white;
+      border-top: 1px solid var(--eupex-border);
+      border-bottom: 1px solid var(--eupex-border);
+      padding: 22px 0;
+    }
+
+    .value-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-weight: 800;
+      color: var(--eupex-ink);
+    }
+
+    .check {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #eaf3fd;
+      color: var(--eupex-blue);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    .use-grid { grid-template-columns: repeat(4, 1fr); }
+    .proof-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+
+    .feature-card,
+    .proof-card,
+    .step,
+    .use-card {
+      padding: 1.55rem;
+      border: 1px solid var(--eupex-border);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #eaf3fd 0%, #f3fbff 100%);
+      color: var(--eupex-blue);
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(22, 112, 216, 0.08);
+    }
+
+    .feature-card h3,
+    .use-card h3,
+    .proof-card h3,
+    .step h3,
+    .cta-card h2,
+    .stack-copy h2 {
+      margin: 0 0 .65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .feature-card p,
+    .use-card p,
+    .proof-card p,
+    .step p,
+    .stack-copy p,
+    .cta-card p,
+    .footer-copy p {
+      margin: 0;
+      color: var(--eupex-slate);
+    }
+
+.use-visual img {
+  width: 100%;
+  height: 260px;        /* choose a consistent height */
+  object-fit: cover;    /* fills nicely without distortion */
+  border-radius: 20px;
+}
+
+.stack-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.0fr;
+  gap: 2rem;
+  align-items: center;
+}
+   
+.stack-card {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.stack-copy {
+  position: relative;
+  z-index: 20;
+  background: white;
+  padding-right: 40px;
+}
+
+.stack-card img {
+  width: 800px;
+  max-width: 150%;
+  transform: translateX(60px);
+}
+
+    .stack-layer {
+      padding: 1.1rem 1.2rem;
+      border-radius: 18px;
+      border: 1px solid var(--eupex-border);
+      background: white;
+      margin-bottom: .85rem;
+    }
+
+    .stack-layer:last-child { margin-bottom: 0; }
+    .stack-layer strong { display: block; margin-bottom: .22rem; }
+    .stack-layer span { color: var(--eupex-slate); font-size: .95rem; }
+
+    .partner-strip {
+      padding: 1.25rem;
+      border: 1px solid var(--eupex-border);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      background: var(--eupex-surface);
+    }
+
+    .partner {
+      min-height: 78px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px dashed #bfd3e8;
+      color: #71839a;
+      font-size: .84rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cta-card {
+      padding: 2.2rem;
+      border: 1px solid rgba(22,112,216,0.12);
+      background: linear-gradient(135deg, #0d1623 0%, #173c70 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(57,180,230,0.24), transparent 68%);
+    }
+
+    .cta-card p { color: rgba(255,255,255,0.76); max-width: 62ch; }
+    .cta-row { margin-top: 1.5rem; position: relative; z-index: 1; }
+
+    .site-footer {
+      padding: 34px 0 42px;
+      background: white;
+      border-top: 1px solid var(--eupex-border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-copy strong { display: block; margin-bottom: .25rem; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem 1.25rem;
+      color: var(--eupex-slate);
+      font-weight: 800;
+    }
+
+    .footer-links a:hover { color: var(--eupex-blue); }
+
+    @media (max-width: 1160px) {
+      .hero-grid,
+      .stack-layout,
+      .footer-grid,
+      .hero-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .use-grid,
+      .value-list,
+      .partner-strip,
+      .metric-grid,
+      .steps,
+      .proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        flex-wrap: wrap;
+        padding: .75rem 0;
+      }
+
+      .brand-logo { height: 46px; }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: .2rem;
+      }
+
+      .section { padding: 68px 0; }
+
+      .feature-grid,
+      .use-grid,
+      .value-list,
+      .partner-strip,
+      .metric-grid,
+      .steps,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div style="
+width:100%;
+background:#ffefc7;
+color:#7a5200;
+text-align:center;
+padding:10px 0;
+font-weight:800;
+font-size:18px;
+letter-spacing:0.04em;
+border-bottom:1px solid #f0d98a;
+position:sticky;
+top:0;
+z-index:9999;">
+Mock up version
+</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="software2.htm#top" aria-label="EUPEX Software home">
+        <img class="brand-logo" src="EUPEX Example Logo 2.jpg" alt="EUPEX Software logo" onerror="this.style.display=&#39;none&#39;;document.getElementById(&#39;brand-fallback&#39;).style.display=&#39;block&#39;;">
+        <div id="brand-fallback" class="brand-fallback" style="display:none;">EUPEX <span>SOFTWARE</span></div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#platform">Platform</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#architecture">Architecture</a>
+     
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#architecture">Explore Software</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">European HPC Software</span>
+          <h1>Operate Exascale HPC and AI workloads with flexibility, performance, and efficiency</h1>
+          <p>
+            EUPEX Software unifies orchestration, monitoring, and energy-aware optimization into a suite built for modern heterogeneous computing environments.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Get Started</a>
+            <a class="button button-secondary" href="#architecture">Explore Architecture</a>
+          </div>
+          <div class="hero-meta">
+            <span>Built for modular supercomputing</span>
+            <span>European technology foundation</span>
+            <span>Energy-aware by design</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-card-inner">
+            <div class="hero-top">
+              <div>
+                <strong>Platform overview</strong><br>
+                <small>Live orchestration snapshot</small>
+              </div>
+              <span class="status-pill">Healthy</span>
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric"><span>Cluster Utilization</span><strong>91%</strong></div>
+              <div class="metric"><span>Energy Efficiency</span><strong>+18%</strong></div>
+              <div class="metric"><span>Active Workflows</span><strong>128</strong></div>
+            </div>
+
+            <div class="hero-panels">
+              <div class="panel">
+                <h3>Workload optimization trend</h3>
+                <div class="bars">
+                  <span style="height:34%"></span>
+                  <span style="height:52%"></span>
+                  <span style="height:61%"></span>
+                  <span style="height:47%"></span>
+                  <span style="height:74%"></span>
+                  <span style="height:67%"></span>
+                  <span style="height:84%"></span>
+                  <span style="height:72%"></span>
+                </div>
+              </div>
+              <div class="panel">
+                <h3>Core capabilities</h3>
+                <div class="cap-list">
+                  <div class="cap-item"><strong>Scheduling</strong><span>Intelligent workload placement</span></div>
+                  <div class="cap-item"><strong>Monitoring</strong><span>Real-time telemetry and visibility</span></div>
+                  <div class="cap-item"><strong>Optimization</strong><span>Energy-aware execution control</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-strip">
+      <div class="container value-list">
+        <div class="value-item"><span class="check">✓</span><span>System Management</span></div>
+        <div class="value-item"><span class="check">✓</span><span>Execution environment</span></div>
+        <div class="value-item"><span class="check">✓</span><span>Tools for efficiency</span></div>
+        <div class="value-item"><span class="check">✓</span><span>Data Storage</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="platform">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">EUPEX Software Suite capabilities</span>
+          <h2>A full Exascale ready software ecosystem ready to be deployed on AI/HPC systems</h2>
+          <p>
+            Manage, Execute and Optimize your Exascale Machine with full I/O capability
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">◎</div>
+            <h3>OPERATE your HPC/AI infrastructure with clarity and control.</h3>
+            <p>
+              EUPEX provides a flexible management layer designed for modular supercomputing environments. It enables system administrators to monitor, configure, and manage resources across heterogeneous architectures—while remaining adaptable to future hardware and software evolution.
+              Built for scalability and interoperability, the platform ensures that system operations remain efficient, reliable, and ready for next-generation computing demands.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">↗</div>
+            <h3>RUN workloads efficiently across the full system</h3>
+            <p>
+              EUPEX integrates the core runtime components needed to execute applications seamlessly across a modular, heterogeneous architecture. It ensures that compute, memory, and accelerator resources are used efficiently—without requiring users to manage underlying system complexity.
+              Designed for performance and scalability, the execution environment enables consistent, optimized workload execution across the entire platform.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>OPTIMIZE performance, energy, and system utilization—at scale</h3>
+            <p>
+              EUPEX provides a set of integrated capabilities that help developers and system operators continuously improve application performance and energy efficiency. By exposing insights into system behavior and resource usage, the platform enables more effective tuning and optimization across the entire stack.
+              Designed for modern HPC environments, it supports smarter decisions that maximize utilization while reducing unnecessary energy consumption.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">▣</div>
+            <h3>STORE &amp; perform I/O at scale</h3>
+            <p>
+              Handle data at scale—without bottlenecks. EUPEX provides a multi-tier storage architecture designed to meet the I/O demands of large-scale modular systems. It integrates high-performance storage technologies into a unified layer, enabling fast, efficient access to data across the platform.
+              By minimizing unnecessary data movement and optimizing data placement, the platform ensures that applications can operate efficiently—even under extreme workloads.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="use-cases" style="background: var(--eupex-surface);">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">EUPEX Software Suite Use cases</span>
+          <h2>Delivering Value at Exascale</h2>
+          <p>
+            Supporting operators, developers, and application teams running advanced workloads.
+          </p>
+        </div>
+
+        <div class="use-grid">
+          <article class="use-card">
+            <div class="use-visual"><img src="System Operations.png" alt="EUPEX visual" loading="lazy"></div>
+           
+            <p>Administer and manage modular systems through an integrated operational software layer.</p>
+          </article>
+          <article class="use-card">
+            <div class="use-visual"><img src="Application Execution.png" alt="EUPEX visual" loading="lazy"></div>
+            <h3>Application Execution</h3>
+            <p>Coordinate execution environments that efficiently expose all available platform resources.</p>
+          </article>
+          <article class="use-card">
+            <div class="use-visual"><img src="Efficiency Optimization.png" alt="EUPEX visual" loading="lazy"></div>
+            <h3>Efficiency Optimization</h3>
+            <p>Give users the tools needed to improve performance and energy efficiency at scale.</p>
+          </article>
+          <article class="use-card">
+            <div class="use-visual"><img src="Data Intensive Workflows.png" alt="EUPEX visual" loading="lazy"></div>
+            <h3>Data-Intensive Workflows</h3>
+            <p>Reduce data movement and support high I/O demand through a multi-tier storage architecture.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container stack-layout">
+        <div class="stack-copy">
+          <span class="eyebrow">EUPEX Software Suite Architecture</span>
+          
+          <p>
+            
+EUPEX Software Architecture provides a structured, modular foundation for integrating and operating next-generation AI and HPC systems. Click on the functionality, view more documentation, &amp; download software
+          </p>
+        </div>
+
+      <div class="stack-card">
+
+  <div style="
+    position: relative;
+    width: 800px;
+    max-width: 150%;
+    transform: translateX(-20px);
+  ">
+
+    <img
+      src="EUPEX-SOFTWARE_ARCHITECTURE-v2.png"
+      alt="EUPEX Software Suite Architecture"
+      loading="lazy"
+      style="width:100%; display:block;"
+    >
+
+    <!-- LEFT COLUMN -->
+
+    <a href="#" title="I/O Analyser"
+       style="position:absolute; left:1.8%; top:21.5%; width:17.5%; height:5.5%;"></a>
+
+    <a href="#" title="BHCO/ACCO"
+       style="position:absolute; left:1.8%; top:32.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="BDPO"
+       style="position:absolute; left:1.8%; top:38.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="COUNTDOWN"
+       style="position:absolute; left:1.8%; top:44.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="MERIC"
+       style="position:absolute; left:1.8%; top:50.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="SCALASCA"
+       style="position:absolute; left:1.8%; top:56.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="SCORE-P"
+       style="position:absolute; left:1.8%; top:62.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="LLview"
+       style="position:absolute; left:1.8%; top:74.5%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="BEO"
+       style="position:absolute; left:1.8%; top:80%; width:16%; height:3.2%;"></a>
+
+    <a href="#" title="ParaStation HealthChecker"
+       style="position:absolute; left:1.8%; top:85.5%; width:20%; height:3.5%;"></a>
+
+    <!-- CENTER -->
+
+    <a href="#" title="StreamFlow"
+       style="position:absolute; left:25%; top:24%; width:25%; height:6%;"></a>
+
+    <a href="#" title="IO-SEA Workflow"
+       style="position:absolute; left:25%; top:31%; width:25%; height:6%;"></a>
+
+    <a href="#" title="DAMARIS"
+       style="position:absolute; left:53%; top:24%; width:27%; height:6%;"></a>
+
+    <a href="#" title="CAPIO"
+       style="position:absolute; left:53%; top:31%; width:27%; height:6%;"></a>
+
+    <a href="#" title="xHC/HAN"
+       style="position:absolute; left:25%; top:48%; width:18%; height:8%;"></a>
+
+    <a href="#" title="TeraHeap"
+       style="position:absolute; left:43%; top:48%; width:18%; height:8%;"></a>
+
+    <a href="#" title="xmap"
+       style="position:absolute; left:50%; top:52%; width:8%; height:3%;"></a>
+
+    <a href="#" title="Object Store"
+       style="position:absolute; left:63%; top:48%; width:18%; height:8%;"></a>
+
+    <a href="#" title="ParaStation MPI"
+       style="position:absolute; left:25%; top:66%; width:18%; height:6%;"></a>
+
+    <a href="#" title="OpenMPI"
+       style="position:absolute; left:43%; top:66%; width:18%; height:6%;"></a>
+
+    <a href="#" title="Storage Node Stack"
+       style="position:absolute; left:63%; top:66%; width:18%; height:6%;"></a>
+
+    <a href="#" title="GPUDirect Adaptation"
+       style="position:absolute; left:25%; top:76%; width:18%; height:8%;"></a>
+
+    <a href="#" title="hwloc"
+       style="position:absolute; left:43%; top:76%; width:18%; height:8%;"></a>
+
+    <a href="#" title="Slurm+ParaStation Resource Manager"
+       style="position:absolute; left:63%; top:76%; width:20%; height:8%;"></a>
+
+    <!-- RIGHT COLUMN -->
+
+    <a href="#" title="ParaStation ClusterTools"
+       style="position:absolute; left:84%; top:22%; width:14%; height:32%;"></a>
+
+    <a href="#" title="Ocean-core / Ocean-stack"
+       style="position:absolute; left:84%; top:63%; width:14%; height:24%;"></a>
+
+  </div>
+
+</div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Want to know more?</h2>
+          <p></p>
+          <div class="cta-row">
+            <a class="button button-primary" href="">Download White Paper</a>
+            <a class="button button-secondary" href="">Contact the Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        <strong>EUPEX Software</strong>
+        <p>EUPEX all rights reserved</p>
+      </div>
+      <div class="footer-links">
+        <a href="">Platform</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body></html>
